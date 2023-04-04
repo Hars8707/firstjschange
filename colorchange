@@ -26,6 +26,8 @@ items[3].textContent='Hello 2';
 items[3].style.fontweight='bold';
 items[3].style.backgroundColor='orange';
 
+
+
 var li = document.getElementsByTagName('li');
 console.log(li);
 console.log(li[i]);
@@ -40,3 +42,25 @@ for(var i=0;i<li.length;i++)
     li[i].style.backgroundColor='#f4f4f4';
 }
 
+
+
+
+
+//making all the odd to green
+
+var titles=document.querySelectorAll('.title');
+console.log(titles);
+titles[0].textContent ='Hello';
+
+var odd = document.querySelectorAll('li:nth-child(odd)');
+
+for(var i=0;i<odd.length;i++)
+{
+    odd[i].style.backgroundColor= 'green'
+}
+
+
+//making 2nd item green
+
+var item = document.querySelector('.list-group-item');
+item.style.color='green';
