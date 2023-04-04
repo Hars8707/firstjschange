@@ -25,3 +25,18 @@ console.log(items[3]);
 items[3].textContent='Hello 2';
 items[3].style.fontweight='bold';
 items[3].style.backgroundColor='orange';
+
+var li = document.getElementsByTagName('li');
+console.log(li);
+console.log(li[i]);
+items[i].textContent='Hello 2';
+items[i].style.fontweight='bold';
+items[i].style.backgroundColor='orange';
+
+//items.style.backgroundColor='#f4f4f4';
+
+for(var i=0;i<li.length;i++)
+{
+    li[i].style.backgroundColor='#f4f4f4';
+}
+
