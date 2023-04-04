@@ -1,0 +1,27 @@
+var items = document.getElementsByClassName('list-group-item');
+console.log(items);
+console.log(items[2]);
+items[2].textContent='Hello 2';
+items[2].style.fontweight='bold';
+items[2].style.backgroundColor='green';
+
+var items = document.getElementsByClassName('list-group-item');
+console.log(items);
+console.log(items[0]);
+items[0].textContent='Hello 2';
+items[0].style.fontweight='bold';
+items[0].style.backgroundColor='blue';
+
+var items = document.getElementsByClassName('list-group-item');
+console.log(items);
+console.log(items[1]);
+items[1].textContent='Hello 2';
+items[1].style.fontweight='bold';
+items[1].style.backgroundColor='red';
+
+var items = document.getElementsByClassName('list-group-item');
+console.log(items);
+console.log(items[3]);
+items[3].textContent='Hello 2';
+items[3].style.fontweight='bold';
+items[3].style.backgroundColor='orange';
