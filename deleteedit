@@ -1,11 +1,14 @@
 var form=document.getElementById('addForm');
 var itemList=document.getElementById('items');
-
+var filter=document.getElementById('filter');
 //form submit event
 form.addEventListener('submit',addItem);
 
 //delete event
 itemList.addEventListener('click',removeItem);
+
+//filter event
+filter.addEventListener('keyup',filterItems);
 
 
 //add item
@@ -53,3 +56,61 @@ function removeItem(e){
         }
     }
         }
+
+        //add description box
+        // select the form and the list of items
+var form = document.querySelector('#addForm');
+var itemList = document.querySelector('#items');
+
+// add event listener to the form when it's submitted
+form.addEventListener('submit', addItem);
+
+// define the function to add a new item
+function addItem(e) {
+  e.preventDefault();
+
+  // select the item and description inputs
+  var itemInput = document.querySelector('#item');
+  var descriptionInput = document.querySelector('#description');
+
+  // get the values of the inputs
+  var newItem = itemInput.value;
+  var newDescription = descriptionInput.value;
+
+  // create a new li element and add it to the list
+  var li = document.createElement('li');
+  li.className = 'list-group-item';
+  li.appendChild(document.createTextNode(newItem + ' - ' + newDescription));
+  
+  // create a delete button and add it to the li element
+  var deleteBtn = document.createElement('button');
+  deleteBtn.className = 'btn btn-danger btn-sm float-right delete';
+  deleteBtn.appendChild(document.createTextNode('X'));
+  li.appendChild(deleteBtn);
+
+  // add the li element to the list of items
+  itemList.appendChild(li);
+
+  // clear the input fields
+  itemInput.value = '';
+  descriptionInput.value = '';
+}
+
+
+//filter items
+function filterItems(){
+    //convert text to lower case
+    var text=e.target.value.toLowerCase();
+    var items=itemList.getElementsByTagName('li');
+
+//convert to an array
+Array.from(items).forEach(function(item)){
+    var itemName=item.firstChild.textContent;
+    if(itemName.toLowerCase().indexof(text)!= -1){
+        item.style.display=-'block'
+    }
+    else{
+        item.display='none';
+    }
+}
+}
