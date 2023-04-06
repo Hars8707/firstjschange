@@ -19,7 +19,22 @@
             localStorage.setItem('name', name);
             localStorage.setItem('email', email);
             localStorage.setItem('phonenumber', phonenumber);
-        }
+            const obj ={
+                name,
+                email,
+                phonenumber
+            }
+            localStorage.setItem('userdetails',JSON.stringify(obj));
+
+    // Retrieve existing user data from local storage or create an empty array
+    let userData = JSON.parse(localStorage.getItem('userdetails')) || [];
+
+    // Append the new user data to the array
+    userData.push({ name, email, phonenumber });
+
+    // Save the updated user data back to local storage
+    localStorage.setItem('userdetails', JSON.stringify(userData));
+}
     </script>
     </body>
 </html>
